@@ -27,10 +27,6 @@ export async function POST(request: Request) {
 
         const body = await request.json();
 
-        // Ensure data folder exists
-        const dataDir = path.dirname(dataFilePath);
-        await fs.mkdir(dataDir, { recursive: true });
-
         // Try to save to Supabase
         let supabaseSuccess = false;
         if (supabase) {
@@ -45,13 +41,29 @@ export async function POST(request: Request) {
             }
         }
 
-        // Save to local file as backup / fallback
-        await fs.writeFile(dataFilePath, JSON.stringify(body, null, 2), 'utf8');
+        // Try to save to local file as backup / fallback
+        // Wrap in try-catch because Vercel/serverless environments have read-only filesystems
+        try {
+            // Ensure data folder exists
+            const dataDir = path.dirname(dataFilePath);
+            await fs.mkdir(dataDir, { recursive: true });
 
-        if (supabaseSuccess) {
-            return NextResponse.json({ success: true, message: 'Data saved to Supabase and local backup' });
-        } else {
-            return NextResponse.json({ success: true, message: 'Data saved to local backup (Supabase unavailable)' });
+            await fs.writeFile(dataFilePath, JSON.stringify(body, null, 2), 'utf8');
+
+            if (supabaseSuccess) {
+                return NextResponse.json({ success: true, message: 'Data saved to Supabase and local backup' });
+            } else {
+                return NextResponse.json({ success: true, message: 'Data saved to local backup (Supabase unavailable)' });
+            }
+        } catch (fsError: any) {
+            console.warn("Could not save to local filesystem (expected in Vercel):", fsError.message);
+
+            if (supabaseSuccess) {
+                return NextResponse.json({ success: true, message: 'Data saved to Supabase (local backup skipped)' });
+            } else {
+                // If both Supabase and local save fail, return an error
+                return NextResponse.json({ error: 'Failed to save data: Supabase unavailable and filesystem read-only' }, { status: 500 });
+            }
         }
     } catch (error) {
         console.error("Failed to save database:", error);
