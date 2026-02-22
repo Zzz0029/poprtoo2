@@ -50,28 +50,40 @@ export async function POST(request: Request) {
 
                 return NextResponse.json({ url: publicUrlData.publicUrl });
             } else {
-                console.warn("Supabase Storage Upload Error (Falling back to local):", uploadError.message);
+                console.error("Supabase Storage Upload Error:", uploadError.message);
+
+                // If we're on Vercel, local fallback won't work anyway, so fail early
+                if (process.env.VERCEL) {
+                    return NextResponse.json({
+                        error: `Supabase Upload Failed: ${uploadError.message}. Pastikan bucket 'portfolio_media' sudah ada dan bersifat Public di Supabase.`,
+                        details: uploadError
+                    }, { status: 500 });
+                }
             }
         }
 
         // Fallback: Local filesystem (fails gracefully in Vercel to prevent 500 error)
         const publicUrl = `/${folderName}/${filename}`;
 
-        try {
-            // Ensure the upload directory exists
-            const uploadDir = path.join(process.cwd(), 'public', folderName);
-            await fs.mkdir(uploadDir, { recursive: true });
+        if (!process.env.VERCEL) {
+            try {
+                // Ensure the upload directory exists
+                const uploadDir = path.join(process.cwd(), 'public', folderName);
+                await fs.mkdir(uploadDir, { recursive: true });
 
-            const filePath = path.join(uploadDir, filename);
+                const filePath = path.join(uploadDir, filename);
 
-            // Write to disk
-            await fs.writeFile(filePath, buffer);
-        } catch (fsError: any) {
-            console.warn("Could not save file locally (expected in Vercel read-only filesystem):", fsError.message);
-            // We ignore the error and return the URL anyway so the demo UI doesn't break
+                // Write to disk
+                await fs.writeFile(filePath, buffer);
+            } catch (fsError: any) {
+                console.warn("Could not save file locally:", fsError.message);
+            }
         }
 
-        return NextResponse.json({ url: publicUrl });
+        return NextResponse.json({
+            url: publicUrl,
+            warning: process.env.VERCEL ? "Local fallback is not persistent on Vercel" : undefined
+        });
     } catch (error) {
         console.error('Error uploading file:', error);
         return NextResponse.json({ error: 'Failed to upload file.' }, { status: 500 });

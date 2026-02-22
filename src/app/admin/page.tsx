@@ -352,11 +352,11 @@ export default function AdminDashboard() {
                                                         formData.append("folder", "about");
                                                         try {
                                                             const res = await fetch("/api/upload", { method: "POST", body: formData });
+                                                            const result = await res.json();
                                                             if (res.ok) {
-                                                                const result = await res.json();
                                                                 setData({ ...data, about: { ...data.about, image: result.url } });
                                                             } else {
-                                                                alert("Upload failed.");
+                                                                alert(`Upload failed: ${result.error || "Unknown error"}`);
                                                             }
                                                         } catch (err) {
                                                             alert("Error uploading file.");
@@ -610,13 +610,13 @@ export default function AdminDashboard() {
                                                                 formData.append("folder", "certificates");
                                                                 try {
                                                                     const res = await fetch("/api/upload", { method: "POST", body: formData });
+                                                                    const result = await res.json();
                                                                     if (res.ok) {
-                                                                        const result = await res.json();
                                                                         const newCerts = [...data.certifications];
                                                                         newCerts[index].image = result.url;
                                                                         setData({ ...data, certifications: newCerts });
                                                                     } else {
-                                                                        alert("Upload failed.");
+                                                                        alert(`Upload failed: ${result.error || "Unknown error"}`);
                                                                     }
                                                                 } catch (err) {
                                                                     alert("Error uploading file.");
