@@ -1,6 +1,6 @@
+import { supabase } from './supabase';
 import fs from 'fs/promises';
 import path from 'path';
-import { supabase } from './supabase';
 
 const TABLE_NAME = 'portfolio_data';
 
@@ -86,56 +86,26 @@ export async function getDbData(): Promise<DbSchema> {
         console.error("Supabase connection failed:", err);
     }
 
-    // Fallback to local db.json
+    // Fallback to local db.json then default data
     const dataFilePath = path.join(process.cwd(), 'data', 'db.json');
     try {
         const fileContent = await fs.readFile(dataFilePath, 'utf8');
         const db = JSON.parse(fileContent);
-        // Ensure legacy fields exist (backward compatibility)
-        if (!db.hallOfFame) db.hallOfFame = [];
-        if (!db.about) {
-            db.about = {
-                title: "Behind\nThe Entity",
-                subtitle: "Core Capabilities",
-                image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
-                capabilities: ["TypeScript", "React", "Next.js", "TailwindCSS", "Framer Motion", "Cyber Security", "Penetration Testing", "Audit", "Zero-Day", "Solidity", "Node.js", "Python"],
-                bioBlocks: [
-                    { id: "1", text: db.profile.bioText, textSize: "normal", textColor: "gray" }
-                ]
-            };
+        return db as DbSchema;
+    } catch (error: any) {
+        // If file doesn't exist (ENOENT), just return default data without erroring out
+        if (error.code !== 'ENOENT') {
+            console.error("Failed to read local database:", error);
         }
-        if (!db.faqs) {
-            db.faqs = [
-                {
-                    q: "Do you take on freelance Web Development projects?",
-                    a: "Yes. In addition to security audits, I specialize in crafting high-end, Awwwards-winning websites using Next.js and Motion."
-                },
-                {
-                    q: "What does an average security audit look like?",
-                    a: "An audit begins with threat modeling, followed by automated scanning, deep manual source code review, and final reporting with actionable remediation steps."
-                },
-                {
-                    q: "How can I hire you for a penetration test?",
-                    a: "Reach out via WhatsApp or Email stringently outlining your scope. I'll provide an NDA and a quote based on the surface area."
-                },
-                {
-                    q: "What is your typical turnaround time?",
-                    a: "Depending on the complexity of the application, audits take between 1 to 4 weeks. Creative development projects usually span 3 to 8 weeks."
-                }
-            ];
-        }
-        return db;
-    } catch (error) {
-        console.error("Failed to read database:", error);
-        // Return fallback data if DB goes missing
-        return {
+
+        const db = {
             profile: {
-                name: "Loading...",
-                role: "Loading...",
-                statementTitle: "Loading...",
-                statementDesc: "Loading...",
-                quote: "Loading...",
-                bioText: "Loading..."
+                name: "Riski Permana",
+                role: "Cyber Security Consultant & Web Developer",
+                statementTitle: "Securing the Future, Building the Web.",
+                statementDesc: "I help organizations secure their critical assets while crafting high-end, dynamic web experiences.",
+                quote: "Security is not a product, but a process.",
+                bioText: "Creative Developer & Security Researcher based in Indonesia."
             },
             contact: {
                 email: "",
@@ -160,5 +130,6 @@ export async function getDbData(): Promise<DbSchema> {
                 }
             ]
         };
+        return db;
     }
 }
