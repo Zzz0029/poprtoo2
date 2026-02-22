@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
-import { supabase } from '@/lib/supabase';
+import { supabase, supabaseAdmin } from '@/lib/supabase';
 
 export async function POST(request: Request) {
     try {
@@ -31,10 +31,11 @@ export async function POST(request: Request) {
         const buffer = Buffer.from(arrayBuffer);
 
         // Try Supabase Storage First
-        if (supabase) {
+        const storageClient = supabaseAdmin || supabase;
+        if (storageClient) {
             const supabaseFilePath = `${folderName}/${filename}`;
 
-            const { data: uploadData, error: uploadError } = await supabase.storage
+            const { data: uploadData, error: uploadError } = await storageClient.storage
                 .from('portfolio_media')
                 .upload(supabaseFilePath, buffer, {
                     contentType: file.type,
@@ -43,7 +44,7 @@ export async function POST(request: Request) {
 
             if (!uploadError) {
                 // Determine the public URL
-                const { data: publicUrlData } = supabase.storage
+                const { data: publicUrlData } = storageClient.storage
                     .from('portfolio_media')
                     .getPublicUrl(supabaseFilePath);
 
