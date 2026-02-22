@@ -120,7 +120,7 @@ export async function getDbData(): Promise<DbSchema> {
                 title: "Behind\nThe Entity",
                 subtitle: "Core Capabilities",
                 image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
-                capabilities: ["Cyber Security Enthusiast", "Bug Hunter"],
+                capabilities: ["Web Penetrasi", "Bug Hunter", "CTF", "Cyber Security Enthusiast"],
                 bioBlocks: []
             },
             faqs: [
