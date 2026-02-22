@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { supabase } from '@/lib/supabase';
 
 export async function POST(request: Request) {
     try {
@@ -25,6 +26,34 @@ export async function POST(request: Request) {
         const ext = file.name.split('.').pop();
         const filename = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
 
+        // Convert the File object to a Buffer
+        const arrayBuffer = await file.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+
+        // Try Supabase Storage First
+        if (supabase) {
+            const supabaseFilePath = `${folderName}/${filename}`;
+
+            const { data: uploadData, error: uploadError } = await supabase.storage
+                .from('portfolio_media')
+                .upload(supabaseFilePath, buffer, {
+                    contentType: file.type,
+                    upsert: false
+                });
+
+            if (!uploadError) {
+                // Determine the public URL
+                const { data: publicUrlData } = supabase.storage
+                    .from('portfolio_media')
+                    .getPublicUrl(supabaseFilePath);
+
+                return NextResponse.json({ url: publicUrlData.publicUrl });
+            } else {
+                console.warn("Supabase Storage Upload Error (Falling back to local):", uploadError.message);
+            }
+        }
+
+        // Fallback: Local filesystem (fails gracefully in Vercel to prevent 500 error)
         const publicUrl = `/${folderName}/${filename}`;
 
         try {
@@ -33,10 +62,6 @@ export async function POST(request: Request) {
             await fs.mkdir(uploadDir, { recursive: true });
 
             const filePath = path.join(uploadDir, filename);
-
-            // Convert the File object to a Buffer
-            const arrayBuffer = await file.arrayBuffer();
-            const buffer = Buffer.from(arrayBuffer);
 
             // Write to disk
             await fs.writeFile(filePath, buffer);
