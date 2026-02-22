@@ -1,0 +1,326 @@
+{
+  "profile": {
+    "name": "|Riski Permana",
+    "role": "Cyber Security Enthusiast",
+    "statementTitle": "Finding vulnerabilities to strengthen systems. ",
+    "statementDesc": "Seorang security enthusiast yang mendalami penetration testing dan offensive security. Saya mengeksplorasi celah untuk memahami cara kerja dunia siber yang sebenarnya.",
+    "quote": "\"Understanding the breach,<br />to build the shield..\"",
+    "bioText": "Q3liZXIgU2VjdXJpdHkgRW50aHVzaWFzdCB8IEJ1ZyBCb3VudHkgSHVudGVyIHwgQ08gUGhvZW5peGN5c2VjLmlkCkJlcmZva3VzIHBhZGEgVnVsbmVyYWJpbGl0eSBSZXNlYXJjaCBkYW4gcGVuZ2FtYW5hbiBhcGxpa2FzaSB3ZWIuIFNheWEgcGVyY2F5YSBiYWh3YSBrZWFtYW5hbiBzaWJlciBhZGFsYWggcHJvc2VzIGJlcmtlbGFuanV0YW4geWFuZyBtZW1idXR1aGthbiBrZXRlbGl0aWFuIGRhbiBkZWRpa2FzaS4=",
+    "bioTextSize": "small"
+  },
+  "contact": {
+    "email": "riskiper819@gmail.com",
+    "whatsapp": "+62 851-8704-7492",
+    "whatsappLink": "https://wa.me/6285187047492",
+    "linkedin": "https://www.linkedin.com/in/riskipermana/",
+    "instagram": "https://instagram.com/rskprmn_668"
+  },
+  "certifications": [
+    {
+      "id": "1771755915353",
+      "title": "BADAN METEOROLOGI, KLIMATOLOGI, DAN GEOFISIKA",
+      "category": "CATEGORY",
+      "year": "2026",
+      "image": "/uploads/1771755926510-24.jpg"
+    },
+    {
+      "id": "1771755893066",
+      "title": "UNIVERSITAS BRAWIJAYA",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755900053-23.jpg"
+    },
+    {
+      "id": "1771755863919",
+      "title": "UNIVERSITAS AIRLANGGA",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755872459-22.jpg"
+    },
+    {
+      "id": "1771755832708",
+      "title": "GUNUNG KIDUL KABUPATEN",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755841933-21.jpg"
+    },
+    {
+      "id": "1771755810933",
+      "title": "BANTUL KABUPATEN",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755819023-20.jpg"
+    },
+    {
+      "id": "1771755787527",
+      "title": "PU",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755795614-19.jpg"
+    },
+    {
+      "id": "1771755750383",
+      "title": "JAKARTA PROVINSI",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755771071-18.jpg"
+    },
+    {
+      "id": "1771755703676",
+      "title": "BANYWANGI KABUPATEN ",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755710678-17.jpg"
+    },
+    {
+      "id": "1771755660860",
+      "title": "LEBAK KABUPATEN",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755678420-16.jpg"
+    },
+    {
+      "id": "1771755361716",
+      "title": "JOGJA PROVINSI",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755368949-14.jpg"
+    },
+    {
+      "id": "1771755325691",
+      "title": "PEKANBARU",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755330914-15.jpg"
+    },
+    {
+      "id": "1771755274425",
+      "title": "DETIK",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755283738-14.png"
+    },
+    {
+      "id": "1771755235682",
+      "title": "TUD",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755247063-13.jpg"
+    },
+    {
+      "id": "1771755118716",
+      "title": "CCIMAHI KOTA",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755127827-12.jpg"
+    },
+    {
+      "id": "1771755099531",
+      "title": "RIAU PROV ",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755107167-11.jpg"
+    },
+    {
+      "id": "1771755080762",
+      "title": "TRANSJAKARTA",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755088538-10.jpg"
+    },
+    {
+      "id": "1771755018813",
+      "title": "DEMAK KABUPATEN",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755026118-9.jpg"
+    },
+    {
+      "id": "1771754997741",
+      "title": "LAMPUNG PROVINSI",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771755004096-8.jpg"
+    },
+    {
+      "id": "1771754978696",
+      "title": "SULAWESI TENGAH ",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771754985609-7.jpg"
+    },
+    {
+      "id": "1771754955634",
+      "title": "KOMISI PENYIARAN INDONESIA 2",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771754960990-6.jpg"
+    },
+    {
+      "id": "1771754935298",
+      "title": "BALI PROVINSI",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771754940872-5.jpg"
+    },
+    {
+      "id": "1771754909141",
+      "title": "LAPPUNG CTF",
+      "category": "CTF",
+      "year": "2025",
+      "image": "/uploads/1771754914032-4.png"
+    },
+    {
+      "id": "1771754827623",
+      "title": "MATARAM KOTA ",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771754835800-4.jpg"
+    },
+    {
+      "id": "1771754794893",
+      "title": "KOMISI PENYIARAN INDONESIA",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771754800360-3.jpg"
+    },
+    {
+      "id": "1771754759916",
+      "title": "PT DIRGANTARA INDONESIA",
+      "category": "Vulnerability Disclosure Program",
+      "year": "2026",
+      "image": "/uploads/1771754772409-2.jpg"
+    },
+    {
+      "id": "1",
+      "title": "NASA LOR",
+      "category": "Vulnerability Disclosure Program",
+      "image": "/uploads/1771751761622-nasa.jpg",
+      "year": "2026",
+      "aspectRatio": "Flexible"
+    },
+    {
+      "id": "2",
+      "title": "WRECKIT 6.0 CTF ",
+      "category": "CTF",
+      "image": "/uploads/1771752212963-Wreckit6.0.jpg",
+      "year": "2025",
+      "aspectRatio": "Flexible"
+    },
+    {
+      "id": "3",
+      "title": "OSLO LOA",
+      "category": "Vulnerability Disclosure Program",
+      "image": "/uploads/1771754527083-1.jpg",
+      "year": "2026",
+      "aspectRatio": "4:3"
+    },
+    {
+      "id": "4",
+      "title": "CRTOM ",
+      "category": "LICENCE",
+      "image": "/uploads/1771754636589-1.png",
+      "year": "2026"
+    }
+  ],
+  "hallOfFame": [
+    {
+      "id": "1771754430727",
+      "title": "DOL VDP ",
+      "url": "https://www.bugcrowd.com/"
+    },
+    {
+      "id": "1771754418156",
+      "title": "DHS VDP",
+      "url": "https://www.bugcrowd.com/"
+    },
+    {
+      "id": "1771754398509",
+      "title": "MARYLAND VDP",
+      "url": "https://www.bugcrowd.com/"
+    },
+    {
+      "id": "1771754384891",
+      "title": "NASA VDP ",
+      "url": "https://www.bugcrowd.com/"
+    },
+    {
+      "id": "1771754343988",
+      "title": "TRANSJAKARTA",
+      "url": "https://csirt.transjakarta.co.id/white-hacker/"
+    },
+    {
+      "id": "1771754331449",
+      "title": "RGOODS",
+      "url": "https://rgoods.com/security-acknowledgments/"
+    },
+    {
+      "id": "1771754296056",
+      "title": "TUDELF NETHERLAND",
+      "url": "https://www.tudelft.nl/hall-of-fame"
+    },
+    {
+      "id": "1771754273977",
+      "title": "SIEMENS",
+      "url": "https://www.siemens.com/global/en/products/services/cert/hall-of-thanks.html"
+    },
+    {
+      "id": "1771754258761",
+      "title": "CUNI",
+      "url": "https://csirt.cuni.cz/en/acknowledgements/"
+    },
+    {
+      "id": "1771754231820",
+      "title": "EUR Netherland",
+      "url": "https://www.eur.nl/en/campus/locations/campus-woudestein/security-safety/information-security/hall-famehttps://www.eur.nl/en/campus/locations/campus-woudestein/security-safety/information-security/hall-fame"
+    },
+    {
+      "id": "1771754214332",
+      "title": "KPN",
+      "url": "https://www.kpn.com/kpn-cert-en/hall-of-fame-en"
+    },
+    {
+      "id": "1771754190140",
+      "title": "GEA GROUP",
+      "url": "https://www.gea.com/en/about-us/information-security/products/responsible-disclosure-of-security-issues/hall-of-fame/"
+    },
+    {
+      "id": "1771750486061",
+      "title": "NOKIA",
+      "url": "https://www.nokia.com/notices/responsible-disclosure/"
+    }
+  ],
+  "about": {
+    "title": "Behind\nThe Entity",
+    "subtitle": "Core Capabilities",
+    "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop",
+    "capabilities": [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "TailwindCSS",
+      "Framer Motion",
+      "Cyber Security",
+      "Penetration Testing",
+      "Audit",
+      "Zero-Day",
+      "Solidity",
+      "Node.js",
+      "Python"
+    ],
+    "bioBlocks": [
+      {
+        "id": "1",
+        "text": "Cyber Security Enthusiast | Bug Bounty Hunter | CO Phoenixcysec.id",
+        "textSize": "xlarge",
+        "textColor": "white"
+      },
+      {
+        "id": "2",
+        "text": "Berfokus pada Vulnerability Research dan pengamanan aplikasi web. Saya percaya bahwa keamanan siber adalah proses berkelanjutan yang membutuhkan ketelitian dan dedikasi.",
+        "textSize": "normal",
+        "textColor": "gray"
+      }
+    ]
+  }
+}
